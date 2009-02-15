@@ -1,0 +1,20 @@
+(
+  {
+    Identifier = objc.property;
+    BasedOn = objc;
+    IsMenuItem = YES;
+    Name = "@property Definition";
+    TextString = "@property (nonatomic, retain) <#type#> *<#variable#>;";
+    CompletionPrefix = "prop";
+    IncludeContexts = ("xcode.lang.objc.interface");
+  },
+  {
+    Identifier = objc.rectmake;
+    BasedOn = objc;
+    IsMenuItem = YES;
+    Name = "RectMake";
+    TextString = "CGRect rect = \n\tCGRectMake(<#x#>, <#y#>, <#width#>, <#height#>);";
+    CompletionPrefix = "rect";
+    IncludeContexts = ("xcode.lang.objc.block");
+  }
+)

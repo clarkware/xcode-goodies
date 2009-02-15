@@ -1,0 +1,6 @@
+# Treats your Xcode project file as a binary so git excludes it from
+# merges and  doesn't try to fix newlines and show it in diffs.
+# Note that it will still be shown as a conflict in merges, but 
+# the file won't have changed. Commit it and you'll be good to go.
+
+*.pbxproj -crlf -diff -merge
