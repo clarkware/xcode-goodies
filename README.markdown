@@ -6,7 +6,7 @@ A collection of Xcode macros, scripts, templates, and other goodies for iPhone a
 CLANG
 -----
 
-To use the [LLVM/Clang Static Analyzer]((http://clang.llvm.org/StaticAnalysis.html), you'll need to download and unpack the latest binaries:
+To use the [LLVM/Clang Static Analyzer](http://clang.llvm.org/StaticAnalysis.html), you'll need to download and unpack the latest binaries:
 
         $ curl -OL http://checker.minormatter.com/checker-0.156.tar.bz2
         $ tar xjf checker-0.156.tar.bz2 -C /Users/mike/clang
