@@ -16,5 +16,53 @@
     TextString = "CGRect rect = \n\tCGRectMake(<#x#>, <#y#>, <#width#>, <#height#>);";
     CompletionPrefix = "rect";
     IncludeContexts = ("xcode.lang.objc.block");
+  },
+  {
+    Identifier = objc.assert.true;
+    BasedOn = objc;
+    IsMenuItem = NO;
+    TextString = "STAssertTrue(<#expression#>, nil);";
+    CompletionPrefix = "ast";
+    IncludeContexts = ("xcode.lang.objc.block");
+  },
+  {
+    Identifier = objc.assert.false;
+    BasedOn = objc;
+    IsMenuItem = NO;
+    TextString = "STAssertFalse(<#expression#>, nil);";
+    CompletionPrefix = "asf";
+    IncludeContexts = ("xcode.lang.objc.block");
+  },
+  {
+    Identifier = objc.assert.equal.objects;
+    BasedOn = objc;
+    IsMenuItem = NO;
+    TextString = "STAssertEqualObjects(<#expected#>, <#actual#>, nil);";
+    CompletionPrefix = "ase";
+    IncludeContexts = ("xcode.lang.objc.block");
+  },
+  {
+    Identifier = objc.assert.not.equal.objects;
+    BasedOn = objc;
+    IsMenuItem = NO;
+    TextString = "STAssertNotEqualObjects(<#expected#>, <#actual#>, nil);";
+    CompletionPrefix = "asne";
+    IncludeContexts = ("xcode.lang.objc.block");
+  },
+  {
+    Identifier = objc.assert.nil;
+    BasedOn = objc;
+    IsMenuItem = NO;
+    TextString = "STAssertNil(<#expression#>, nil);";
+    CompletionPrefix = "an";
+    IncludeContexts = ("xcode.lang.objc.block");
+  },
+  {
+    Identifier = objc.assert.not.nil;
+    BasedOn = objc;
+    IsMenuItem = NO;
+    TextString = "STAssertNotNil(<#expression#>, nil);";
+    CompletionPrefix = "ann";
+    IncludeContexts = ("xcode.lang.objc.block");
   }
 )
