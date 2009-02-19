@@ -1,0 +1,4 @@
+{
+  MainTemplateFile = "class.m";
+  Description = "A SenTestCase subclass using the Google Toolbox.";
+}
