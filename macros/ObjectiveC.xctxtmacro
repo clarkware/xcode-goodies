@@ -1,5 +1,15 @@
 (
   {
+      Identifier = objc.init;
+      BasedOn = objc;
+      IsMenuItem = YES;
+      Name = "init Definition";
+      TextString = "- (id)init {\n\tif (![super init]) return nil;\n\n\t<#!initializations!#>\n\n\treturn self;\n}";
+      CompletionPrefix = init;
+      IncludeContexts = ( "xcode.lang.objc.implementation" );
+      ExcludeContexts = ( "xcode.lang.objc.block" );
+  },
+  {
     Identifier = objc.property;
     BasedOn = objc;
     IsMenuItem = YES;
