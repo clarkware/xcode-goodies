@@ -57,6 +57,15 @@ task :analyze do
   end
 end
 
+desc 'Compile the XIBs to NIBs, and emit any problems'
+task :compile_nibs do  
+  ibtool = "ibtool --errors --warnings --notices --output-format human-readable-text"
+  Dir["#{base_dir}/*.xib"].each do |path|
+    sh "#{ibtool} --compile output.nib #{path}"
+  end
+  rm_f 'output.nib'
+end
+
 desc 'Clean build artifacts'
 task :clean do
   sh "xcodebuild clean"
