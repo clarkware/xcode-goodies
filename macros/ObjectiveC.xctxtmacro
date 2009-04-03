@@ -28,6 +28,16 @@
     IncludeContexts = ("xcode.lang.objc.block");
   },
   {
+      Identifier = objc.test;
+      BasedOn = objc;
+      IsMenuItem = YES;
+      Name = "Test Method Definition";
+      TextString = "- (void)test<#what#> {\n\tSTAssertTrue(NO, nil);\n}";
+      CompletionPrefix = test;
+      IncludeContexts = ( "xcode.lang.objc.implementation" );
+      ExcludeContexts = ( "xcode.lang.objc.block" );
+  },
+  {
     Identifier = objc.assert.true;
     BasedOn = objc;
     IsMenuItem = NO;
@@ -47,8 +57,8 @@
     Identifier = objc.assert.equal.objects;
     BasedOn = objc;
     IsMenuItem = NO;
-    TextString = "STAssertEqualObjects(<#expected#>, <#actual#>, nil);";
-    CompletionPrefix = "ase";
+    TextString = "STAssertEquals(<#expected#>, <#actual#>, nil);";
+    CompletionPrefix = "aseo";
     IncludeContexts = ("xcode.lang.objc.block");
   },
   {
@@ -56,6 +66,22 @@
     BasedOn = objc;
     IsMenuItem = NO;
     TextString = "STAssertNotEqualObjects(<#expected#>, <#actual#>, nil);";
+    CompletionPrefix = "asneo";
+    IncludeContexts = ("xcode.lang.objc.block");
+  },
+  {
+    Identifier = objc.assert.equals;
+    BasedOn = objc;
+    IsMenuItem = NO;
+    TextString = "STAssertEquals(<#expected#>, <#actual#>, nil);";
+    CompletionPrefix = "ase";
+    IncludeContexts = ("xcode.lang.objc.block");
+  },
+  {
+    Identifier = objc.assert.not.equals;
+    BasedOn = objc;
+    IsMenuItem = NO;
+    TextString = "STAssertNotEquals(<#expected#>, <#actual#>, nil);";
     CompletionPrefix = "asne";
     IncludeContexts = ("xcode.lang.objc.block");
   },
@@ -64,7 +90,7 @@
     BasedOn = objc;
     IsMenuItem = NO;
     TextString = "STAssertNil(<#expression#>, nil);";
-    CompletionPrefix = "an";
+    CompletionPrefix = "asn";
     IncludeContexts = ("xcode.lang.objc.block");
   },
   {
@@ -72,7 +98,7 @@
     BasedOn = objc;
     IsMenuItem = NO;
     TextString = "STAssertNotNil(<#expression#>, nil);";
-    CompletionPrefix = "ann";
+    CompletionPrefix = "asnn";
     IncludeContexts = ("xcode.lang.objc.block");
   }
 )
