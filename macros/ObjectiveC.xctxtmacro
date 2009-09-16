@@ -2,9 +2,10 @@
   {
       Identifier = objc.init;
       BasedOn = objc;
+      OnlyAtBOL = YES;
       IsMenuItem = YES;
       Name = "init Definition";
-      TextString = "- (id)init {\n\tif (![super init]) return nil;\n\n\t<#!initializations!#>\n\n\treturn self;\n}";
+      TextString = "- (id)init {\n\tif (self = [super init]) {\n\t\t<#!initializations!#>\n\t}\n\treturn self;\n}\n";
       CompletionPrefix = init;
       IncludeContexts = ( "xcode.lang.objc.implementation" );
       ExcludeContexts = ( "xcode.lang.objc.block" );
@@ -12,6 +13,7 @@
   {
     Identifier = objc.property;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = YES;
     Name = "@property Definition";
     TextString = "@property (nonatomic, retain) <#type#> *<#variable#>;";
@@ -21,6 +23,7 @@
   {
     Identifier = objc.rectmake;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = YES;
     Name = "RectMake";
     TextString = "CGRect rect = \n\tCGRectMake(<#x#>, <#y#>, <#width#>, <#height#>);";
@@ -30,6 +33,7 @@
   {
       Identifier = objc.test;
       BasedOn = objc;
+      OnlyAtBOL = YES;
       IsMenuItem = YES;
       Name = "Test Method Definition";
       TextString = "- (void)test<#what#> {\n\tSTAssertTrue(NO, nil);\n}";
@@ -40,6 +44,7 @@
   {
     Identifier = objc.assert.true;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = NO;
     TextString = "STAssertTrue(<#expression#>, nil);";
     CompletionPrefix = "ast";
@@ -48,6 +53,7 @@
   {
     Identifier = objc.assert.false;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = NO;
     TextString = "STAssertFalse(<#expression#>, nil);";
     CompletionPrefix = "asf";
@@ -56,38 +62,43 @@
   {
     Identifier = objc.assert.equal.objects;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = NO;
-    TextString = "STAssertEquals(<#expected#>, <#actual#>, nil);";
+    TextString = "STAssertEquals(<#actual#>, <#expected#>, nil);";
     CompletionPrefix = "aseo";
     IncludeContexts = ("xcode.lang.objc.block");
   },
   {
     Identifier = objc.assert.not.equal.objects;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = NO;
-    TextString = "STAssertNotEqualObjects(<#expected#>, <#actual#>, nil);";
+    TextString = "STAssertNotEqualObjects(<#actual#>, <#expected#>, nil);";
     CompletionPrefix = "asneo";
     IncludeContexts = ("xcode.lang.objc.block");
   },
   {
     Identifier = objc.assert.equals;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = NO;
-    TextString = "STAssertEquals(<#expected#>, <#actual#>, nil);";
+    TextString = "STAssertEquals(<#actual#>, <#expected#>, nil);";
     CompletionPrefix = "ase";
     IncludeContexts = ("xcode.lang.objc.block");
   },
   {
     Identifier = objc.assert.not.equals;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = NO;
-    TextString = "STAssertNotEquals(<#expected#>, <#actual#>, nil);";
+    TextString = "STAssertNotEquals(<#actual#>, <#expected#>, nil);";
     CompletionPrefix = "asne";
     IncludeContexts = ("xcode.lang.objc.block");
   },
   {
     Identifier = objc.assert.nil;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = NO;
     TextString = "STAssertNil(<#expression#>, nil);";
     CompletionPrefix = "asn";
@@ -96,6 +107,7 @@
   {
     Identifier = objc.assert.not.nil;
     BasedOn = objc;
+    OnlyAtBOL = YES;
     IsMenuItem = NO;
     TextString = "STAssertNotNil(<#expression#>, nil);";
     CompletionPrefix = "asnn";

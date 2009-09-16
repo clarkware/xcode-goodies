@@ -1,16 +1,27 @@
-#import "GTMSenTestCase.h"
-
-@interface «FILEBASENAMEASIDENTIFIER» : SenTestCase 
-
+#import <SenTestingKit/SenTestingKit.h>
+#import <UIKit/UIKit.h>
+ 
+@interface «FILEBASENAMEASIDENTIFIER» : SenTestCase {
+}
 @end
 
 @implementation «FILEBASENAMEASIDENTIFIER»
 
--(void) setUp {
+#pragma mark -
+#pragma mark Setup/teardown
 
+- (void)setUp {
+    NSLog(@"%@ setUp", self.name);
 }
 
--(void) testSomethingAlready {
+- (void)tearDown {
+    NSLog(@"%@ tearDown", self.name);
+}
+
+#pragma mark -
+#pragma mark Tests
+
+-(void)testSomethingAlready {
     STAssertTrue(YES, nil);
 }
 
