@@ -22,7 +22,7 @@
 #pragma mark Tests
 
 -(void)testSomethingAlready {
-    STAssertTrue(YES, nil);
+    STAssertTrue(NO, nil);
 }
 
 @end
